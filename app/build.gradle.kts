@@ -57,8 +57,8 @@ dependencies {
     androidTestImplementation(libs.androidx.ui.test.junit4)
     debugImplementation(libs.androidx.ui.tooling)
     debugImplementation(libs.androidx.ui.test.manifest)
+    implementation("androidx.navigation:navigation-ui:2.8.7")
 
     implementation("io.github.jan-tennert.supabase:gotrue-kt:1.3.2")
-    implementation("io.github.jan-tennert.supabase:realtime-kt")
     implementation("io.ktor:ktor-client-cio:2.3.4")
 }
