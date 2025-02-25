@@ -151,7 +151,7 @@ class Authentication : ComponentActivity() {
                 horizontalAlignment = Alignment.CenterHorizontally
             ) {
                 Button(
-                    onClick = { },
+                    onClick = { context.startActivity(Intent(context, CreatingProfile::class.java)) },
                     Modifier.size(315.dp, 60.dp)
                 ) {
                     Text(

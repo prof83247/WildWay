@@ -20,3 +20,5 @@ val TextGrey = Color(0xFFCFCFCF)
 val TextFieldColor = Color(0xFFF7F8F8)
 val JustOneTime = Color(0xFFADA4A5)
 
+val AnotherJustOneTime = Color(0xFF7B6F72)
+
