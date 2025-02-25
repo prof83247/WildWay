@@ -17,12 +17,14 @@ import androidx.compose.runtime.Composable
 import androidx.compose.ui.Alignment
 import androidx.compose.ui.Modifier
 import androidx.compose.ui.res.painterResource
-import androidx.compose.ui.text.font.FontFamily
+import androidx.compose.ui.text.font.FontStyle
 import androidx.compose.ui.text.font.FontWeight
 import androidx.compose.ui.unit.dp
 import androidx.compose.ui.unit.sp
 import com.example.wildway.ui.theme.TextGreen
 import com.example.wildway.ui.theme.TextGrey
+import com.example.wildway.ui.theme.montserratFamily
+
 
 class MainActivity : ComponentActivity() {
     override fun onCreate(savedInstanceState: Bundle?) {
@@ -33,6 +35,20 @@ class MainActivity : ComponentActivity() {
         }
     }
 }
+
+//@Composable
+//fun SplashNavigation(
+//    modifier: Modifier = Modifier,
+//    navController: NavHostController = rememberNavController(),
+//    startDestination: NavDestination) {
+//    NavHost(
+//        modifier = Modifier,
+//        navController = navController,
+//        startDestination = SplashScreen()
+//    ) {
+//        navController.navigate(Onboarding1())
+//    }
+//}
 
 @Composable
 fun SplashScreen(){
@@ -54,16 +70,25 @@ fun SplashScreen(){
                 fontSize = 32.sp,
                 color = TextGreen,
                 fontWeight = FontWeight.Bold,
-                fontFamily = FontFamily()
+                fontFamily = montserratFamily,
+                fontStyle = FontStyle.Normal
             )
             Text(
                 "Way",
                 fontSize = 32.sp,
-                fontWeight = FontWeight.Bold
+                fontWeight = FontWeight.Bold,
+                fontFamily = montserratFamily,
+                fontStyle = FontStyle.Normal
             )
         }
         Text("Каждый может тренироваться",
             color = TextGrey,
-            fontSize = 18.sp)
+            fontSize = 18.sp,
+            fontFamily = montserratFamily,
+            fontWeight = FontWeight.Normal,
+            fontStyle = FontStyle.Normal
+        )
     }
 }
+
+//Не моё это, забыл как переходы между активностями делать и всё
