@@ -1,5 +1,6 @@
 package com.example.wildway
 
+import android.content.Intent
 import android.os.Bundle
 import androidx.activity.ComponentActivity
 import androidx.activity.compose.setContent
@@ -12,19 +13,24 @@ import androidx.compose.foundation.layout.fillMaxSize
 import androidx.compose.foundation.layout.fillMaxWidth
 import androidx.compose.foundation.layout.padding
 import androidx.compose.foundation.layout.size
+import androidx.compose.material3.Button
+import androidx.compose.material3.ButtonDefaults
 import androidx.compose.material3.Text
 import androidx.compose.runtime.Composable
 import androidx.compose.ui.Alignment
 import androidx.compose.ui.Modifier
+import androidx.compose.ui.graphics.Color
+import androidx.compose.ui.platform.LocalContext
 import androidx.compose.ui.res.painterResource
 import androidx.compose.ui.text.font.FontStyle
 import androidx.compose.ui.text.font.FontWeight
 import androidx.compose.ui.unit.dp
 import androidx.compose.ui.unit.sp
+import androidx.navigation.*
+import androidx.navigation.compose.*
 import com.example.wildway.ui.theme.TextGreen
 import com.example.wildway.ui.theme.TextGrey
 import com.example.wildway.ui.theme.montserratFamily
-
 
 class MainActivity : ComponentActivity() {
     override fun onCreate(savedInstanceState: Bundle?) {
@@ -32,31 +38,24 @@ class MainActivity : ComponentActivity() {
         enableEdgeToEdge()
         setContent {
             SplashScreen()
+
         }
     }
 }
 
-//@Composable
-//fun SplashNavigation(
-//    modifier: Modifier = Modifier,
-//    navController: NavHostController = rememberNavController(),
-//    startDestination: NavDestination) {
-//    NavHost(
-//        modifier = Modifier,
-//        navController = navController,
-//        startDestination = SplashScreen()
-//    ) {
-//        navController.navigate(Onboarding1())
-//    }
-//}
-
 @Composable
 fun SplashScreen(){
+    val context = LocalContext.current
+    Button(onClick = { context.startActivity(Intent(context, Authentication::class.java)) },
+        modifier = Modifier.fillMaxSize(),
+        colors = ButtonDefaults.buttonColors(containerColor = Color.Transparent)) { }
+
     Column(modifier = Modifier
         .fillMaxSize()
-        .padding(top = 120.dp, start = 30.dp, end = 30.dp ),
+        .padding(top = 120.dp, start = 30.dp, end = 30.dp),
         verticalArrangement = Arrangement.Top,
-        horizontalAlignment = Alignment.CenterHorizontally) {
+        horizontalAlignment = Alignment.CenterHorizontally,
+    ) {
         Image(
             painter = painterResource(R.drawable.splashlogo),
             contentDescription = null,
@@ -89,6 +88,7 @@ fun SplashScreen(){
             fontStyle = FontStyle.Normal
         )
     }
+
 }
 
 //Не моё это, забыл как переходы между активностями делать и всё
