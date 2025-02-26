@@ -71,7 +71,7 @@ fun Goal() {
         }
         Spacer(Modifier.padding(bottom = 75.dp))
         Button(
-            onClick = { context.startActivity(Intent(context, SuccessReg::class.java)) },
+            onClick = { context.startActivity(Intent(context, Home::class.java)) },
             Modifier.size(315.dp, 60.dp)
         ) {
             Text(
