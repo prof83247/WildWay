@@ -21,4 +21,6 @@ val TextFieldColor = Color(0xFFF7F8F8)
 val JustOneTime = Color(0xFFADA4A5)
 
 val AnotherJustOneTime = Color(0xFF7B6F72)
-
+val GreyNo = Color(0xFFF7F8F8)
+val SecondAnotherJustOneTime = Color(0xFFB6B4C2)
+val ThirdAnotherJustOneTime = Color(0xFFA5A3B0)
