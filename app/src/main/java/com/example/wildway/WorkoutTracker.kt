@@ -150,8 +150,17 @@ fun WorkoutTracker(){
                             .clip(RoundedCornerShape(5.dp))
                             .background(GreyNo)
                     )
+
                 }
             }
+        }
+        Text("всё тело",
+            fontSize = 16.sp,
+            fontStyle = FontStyle.Normal,
+            fontWeight = FontWeight.Bold,
+            fontFamily = montserratFamily)
+        Button(onClick = { context.startActivity(Intent(context, WorkoutDetails1::class.java)) }) {
+            Text("Больше")
         }
     }
 }
