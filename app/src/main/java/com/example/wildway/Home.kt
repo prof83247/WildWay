@@ -78,6 +78,7 @@ class Home : ComponentActivity() {
                     modifier = Modifier
                         .fillMaxWidth()
                         .height(80.dp)
+                        .background(Color.White)
                 ) {
                     Column(
                         Modifier.fillMaxSize(),
@@ -92,31 +93,61 @@ class Home : ComponentActivity() {
                             verticalAlignment = Alignment.CenterVertically
                         ) {
 
-                            IconButton(onClick = { /*coroutineScope.launch(pagerState.currentPage){}*/ }) {
+                            IconButton(onClick = { coroutineScope.launch{when(pagerState.currentPage){
+                                0 -> pagerState.animateScrollToPage(0)
+                                1 -> pagerState.animateScrollToPage(0)
+                                2 -> pagerState.animateScrollToPage(0)
+                                3 -> pagerState.animateScrollToPage(0)
+                                4 -> pagerState.animateScrollToPage(0)
+                            } } }) {
                                 Icon(
                                     painterResource(R.drawable.homeunselected),
                                     contentDescription = null
                                 )
                             }
-                            IconButton(onClick = {}) {
+                            IconButton(onClick = { coroutineScope.launch{when(pagerState.currentPage){
+                                0 -> pagerState.animateScrollToPage(1)
+                                1 -> pagerState.animateScrollToPage(1)
+                                2 -> pagerState.animateScrollToPage(1)
+                                3 -> pagerState.animateScrollToPage(1)
+                                4 -> pagerState.animateScrollToPage(1)
+                            } } }) {
                                 Icon(
                                     painterResource(R.drawable.witunselected),
                                     contentDescription = null
                                 )
                             }
-                            IconButton(onClick = {}) {
+                            IconButton(onClick = { coroutineScope.launch{when(pagerState.currentPage){
+                                0 -> pagerState.animateScrollToPage(2)
+                                1 -> pagerState.animateScrollToPage(2)
+                                2 -> pagerState.animateScrollToPage(2)
+                                3 -> pagerState.animateScrollToPage(2)
+                                4 -> pagerState.animateScrollToPage(2)
+                            } } }) {
                                 Icon(
                                     painterResource(R.drawable.searchuns),
                                     contentDescription = null
                                 )
                             }
-                            IconButton(onClick = {}) {
+                            IconButton(onClick = { coroutineScope.launch{when(pagerState.currentPage){
+                                0 -> pagerState.animateScrollToPage(3)
+                                1 -> pagerState.animateScrollToPage(3)
+                                2 -> pagerState.animateScrollToPage(3)
+                                3 -> pagerState.animateScrollToPage(3)
+                                4 -> pagerState.animateScrollToPage(3)
+                            } } }) {
                                 Icon(
                                     painterResource(R.drawable.photouns),
                                     contentDescription = null
                                 )
                             }
-                            IconButton(onClick = {}) {
+                            IconButton(onClick = { coroutineScope.launch{when(pagerState.currentPage){
+                                0 -> pagerState.animateScrollToPage(4)
+                                1 -> pagerState.animateScrollToPage(4)
+                                2 -> pagerState.animateScrollToPage(4)
+                                3 -> pagerState.animateScrollToPage(4)
+                                4 -> pagerState.animateScrollToPage(4)
+                            } } }) {
                                 Icon(
                                     painterResource(R.drawable.profileuns),
                                     contentDescription = null
@@ -133,7 +164,8 @@ class Home : ComponentActivity() {
     fun BottomBarPages(pagerState: PagerState) {
         HorizontalPager(pagerState) { page ->
             when (page) {
-                1 -> HomeScreen()
+                0 -> HomeScreen()
+                1 -> WorkoutTracker()
 
             }
         }
@@ -449,7 +481,9 @@ fun HomeScreen() {
                             .fillMaxSize()
                             .background(color = Color.White)
                     ) {
-                        Column(Modifier.fillMaxSize().padding(20.dp)) {
+                        Column(Modifier
+                            .fillMaxSize()
+                            .padding(20.dp)) {
                             Text(
                                 "Сон",
                                 fontSize = 12.sp,
