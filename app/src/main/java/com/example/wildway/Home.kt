@@ -168,7 +168,7 @@ class Home : ComponentActivity() {
             when (page) {
                 0 -> HomeScreen()
                 1 -> WorkoutTracker()
-
+                3 -> ProgressPhoto()
             }
         }
     }
