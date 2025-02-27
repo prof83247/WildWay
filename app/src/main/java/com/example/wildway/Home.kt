@@ -1,5 +1,6 @@
 package com.example.wildway
 
+import android.content.Intent
 import android.os.Bundle
 import android.widget.Space
 import androidx.activity.ComponentActivity
@@ -42,6 +43,7 @@ import androidx.compose.ui.graphics.Brush
 import androidx.compose.ui.graphics.Color
 import androidx.compose.ui.graphics.RectangleShape
 import androidx.compose.ui.graphics.Shape
+import androidx.compose.ui.platform.LocalContext
 import androidx.compose.ui.res.painterResource
 import androidx.compose.ui.text.font.FontStyle
 import androidx.compose.ui.text.font.FontWeight
@@ -188,6 +190,7 @@ fun HomeScreen() {
             CianBlue
         )
     )
+    val context = LocalContext.current
 
     Column(
         modifier = Modifier
@@ -471,7 +474,7 @@ fun HomeScreen() {
                 }
 
                 Card(
-                    onClick = {},
+                    onClick = { context.startActivity(Intent(context, SleepTracker::class.java)) },
                     Modifier
                         .size(150.dp)
                         .clip(shape = RoundedCornerShape(20.dp))
