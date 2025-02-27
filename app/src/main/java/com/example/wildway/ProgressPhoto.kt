@@ -233,7 +233,7 @@ fun ProgressPhoto() {
                         )
                         Spacer(Modifier.padding(bottom = 15.dp))
                         Button(
-                            onClick = {  },
+                            onClick = { context.startActivity(Intent(context, PhotoScreen::class.java)) },
                             modifier = Modifier
                                 .background(brush = brush2, shape = CircleShape)
                                 .size(95.dp, 35.dp),

@@ -26,7 +26,7 @@ class PhotoScreen : ComponentActivity() {
         super.onCreate(savedInstanceState)
         enableEdgeToEdge()
         setContent {
-
+            PhotoMake()
         }
     }
 }
