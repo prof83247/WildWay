@@ -26,3 +26,4 @@ val SecondAnotherJustOneTime = Color(0xFFB6B4C2)
 val ThirdAnotherJustOneTime = Color(0xFFA5A3B0)
 
 val OpacityBlack = Color(0x1A1D1617)
+val Shadow = Color(0x1C161712)
